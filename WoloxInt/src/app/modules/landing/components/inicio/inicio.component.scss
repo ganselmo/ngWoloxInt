@@ -1,0 +1,52 @@
+section {
+  height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 2vh 7vw;
+  .header-background
+  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(/assets/Backgrounds/Bg_Header.png);
+    background-size: contain;
+    opacity: .6;
+    z-index: -1;
+    width: 100%;
+    height: 65vh;
+  }
+
+  .welcome {
+
+    display: flex;
+    flex-direction: row;
+    height: 55vh;
+    align-items: flex-start;
+
+    justify-content: space-between;
+    .wtitle {
+      width: 50%;
+      margin-top: 10vh;
+      h1{
+        width: 90%;
+        font-weight: 500;
+        font-size: 2.5em;
+      }
+    }
+
+    .hero {
+      width: 50%;
+      height: 80%;
+      background: url(/assets/Img_Hero/Ic_ilustra_Hero@3x.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: scaleX(-1);
+      background-position: center;
+      // background: url('../../../../../assets/Img_Hero/Ic_ilustra_Hero@3x.png');
+      z-index: 3;
+    }
+  }
+}
+

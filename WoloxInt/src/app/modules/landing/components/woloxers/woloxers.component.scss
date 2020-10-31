@@ -1,0 +1,77 @@
+section {
+  background-color: #f2f5fa;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  .twitter-block {
+    position: relative;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 55vw;
+    .title {
+      margin-top: 4vh;
+      margin-bottom: 1vh;
+      font-size: 3.1em;
+    }
+    .twitter-link {
+      width: 130px;
+      margin-top: 6vh;
+      margin-bottom: 1vh;
+      margin-right: 5vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      img {
+        width: 40px;
+      }
+      span {
+        color: white;
+        font-size: 1.2;
+        margin-bottom: 7px;
+      }
+    }
+    .twitterRef {
+
+      a {
+
+        text-decoration: none; /* no underline */
+      }
+    }
+
+  }
+  .ideas
+  {
+
+    position: relative;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45vw;
+    h1{
+      font-family: "Montserrat Light";
+      text-align: center;
+      width: 35vw;
+      font-size: 2.5em;
+    }
+  }
+  .twitter-block-background {
+    z-index: 1;
+    align-self: start;
+    position: absolute;
+    width: 55vw;
+    background: url(/assets/img_woloxer@3x.png);
+    opacity: 0.95;
+    filter: sepia(100%) hue-rotate(190deg) saturate(100%);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+  }
+}

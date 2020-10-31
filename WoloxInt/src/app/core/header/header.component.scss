@@ -1,0 +1,112 @@
+header {
+  display: flex;
+  flex: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+
+  margin: 3vh 1vw;
+  font-family: 'Montserrat';
+
+  .logo {
+    display: flex;
+    align-self: center;
+
+    img {
+      width: 180px;
+
+      @media (max-width: 600px) {
+
+        width: 60%;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    flex: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+
+
+  }
+
+}
+
+@media (max-width: 300px) {
+  header {
+    .logo {
+      display: flex;
+      align-self: center;
+
+      img {
+        width: 100px;
+      }
+
+
+    }
+    .buttons {
+      width: 80%
+    }
+
+  }
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+  header {
+    .logo {
+      display: flex;
+      align-self: center;
+
+      img {
+        width: 100px;
+      }
+
+
+    }
+    .buttons {
+      width: 60%
+    }
+
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+
+  header {
+    .logo {
+      display: flex;
+      align-self: center;
+
+      img {
+        width: 120px;
+      }
+
+    }
+
+    .buttons {
+      width: 50%
+    }
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1367px) {
+
+  header {
+    .logo {
+      display: flex;
+      align-self: center;
+
+      img {
+        width: 150px;
+      }
+
+    }
+
+    .buttons {
+      width: 40%
+    }
+
+  }
+}

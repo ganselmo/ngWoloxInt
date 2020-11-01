@@ -1,1 +1,9 @@
-<p>beneficios works!</p>
+<section>
+  <div class="title">
+  <h1 class="spn-tertiary">Entre los beneficios que ofrecemos se encuentran</h1>
+  <span class="spn-color-light">;)</span>
+  </div>
+  <div class="benefits">
+    <wolox-benefit *ngFor="let benefit of benefits" [benefit]='benefit'></wolox-benefit>
+  </div>
+</section>

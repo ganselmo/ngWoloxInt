@@ -1,0 +1,36 @@
+section
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  .title{
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    h1{
+      align-self: center;
+      justify-self: center;
+      font-size: 2em;
+    }
+    span{
+      font-weight: 500;
+      font-size:2em;
+      margin: 0 1vw;
+    }
+  }
+
+  .benefits
+  {
+    height: 50%;
+    width: 90vw;
+    display: flex;
+    flex: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6vh;
+  }
+}

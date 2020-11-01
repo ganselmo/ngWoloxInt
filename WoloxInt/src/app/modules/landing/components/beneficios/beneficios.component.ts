@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Benefit } from '../../models/benefit.model';
+import { BenefitsService } from '../../services/benefits.service';
 
 @Component({
   selector: 'app-beneficios',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BeneficiosComponent implements OnInit {
 
-  constructor() { }
+  benefits:Array<Benefit>;
+  constructor(private benefitService:BenefitsService) { }
+
 
   ngOnInit(): void {
+
+    this.benefits = this.benefitService.getBenefits()
   }
+
 
 }

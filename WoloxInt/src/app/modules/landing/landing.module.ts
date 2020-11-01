@@ -7,11 +7,12 @@ import { WoloxersComponent } from './components/woloxers/woloxers.component';
 import { BeneficiosComponent } from './components/beneficios/beneficios.component';
 import { ThanksComponent } from './components/thanks/thanks.component';
 import { CoreModule } from 'src/app/core/core.module';
+import { BenefitComponent } from './components/beneficios/benefit/benefit.component';
 
 
 
 @NgModule({
-  declarations: [LandingComponent, InicioComponent, WoloxersComponent, BeneficiosComponent, ThanksComponent],
+  declarations: [LandingComponent, InicioComponent, WoloxersComponent, BeneficiosComponent, ThanksComponent, BenefitComponent],
   imports: [
     CommonModule,
     LandingRoutingModule,

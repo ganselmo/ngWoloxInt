@@ -1,0 +1,61 @@
+.curtain {
+  z-index: 998;
+  background-color: black;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fadeOut 0.5s linear 0s 1 forwards;
+
+}
+.curtain.close {
+  opacity: 0.4;
+  visibility: visible;
+  animation: fadeIn 0.5s linear 0s 1 forwards;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.0;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.modal {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+
+  div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out;
+  }
+}
+.modal.close {
+
+  visibility: visible;
+  // transition: opacity 0.5s ease-in-out;
+}

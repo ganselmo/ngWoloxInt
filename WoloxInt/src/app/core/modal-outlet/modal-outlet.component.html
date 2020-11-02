@@ -1,0 +1,6 @@
+<div class="curtain"  [ngClass]="{'close': component}" ></div>
+<div class="modal" [ngClass]="{'close': component}" (wheel)="wheelBlock($event)">
+  <div>
+    <ng-container *ngComponentOutlet="component"></ng-container>
+  </div>
+</div>

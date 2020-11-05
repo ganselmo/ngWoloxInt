@@ -3,8 +3,9 @@
     <img src="../../../assets/logo_full_color.svg" alt="">
   </div>
   <div class="buttons">
-    <button class="btn btn-simple">Inicio</button>
-    <button class="btn btn-simple">Beneficios</button>
-    <button class="btn btn-wolox-info" (click)="login()">Login</button>
+    <button  (click)="scroll('inicio')" class="btn btn-simple">Inicio</button>
+    <button (click)="scroll('beneficios')" class="btn btn-simple">Beneficios</button>
+    <button nef class="btn btn-wolox-info" *ngIf="!logged()" (click)="login()">Login</button>
+    <button nef class="btn btn-wolox-info" *ngIf="logged()" (click)="login()">Techs</button>
   </div>
 </header>

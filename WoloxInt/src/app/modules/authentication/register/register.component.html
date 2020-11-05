@@ -1,1 +1,117 @@
-<p>register works!</p>
+<article>
+  <div class="form-header">
+    <h1>
+      Registro
+    </h1>
+    <button (click)="close()" class="close color-tertiary">
+      X
+    </button>
+  </div>
+
+  <form [formGroup]="registerForm">
+    <div class="inputGroup">
+      <input type="text" class="input-validation" maxlength="30"
+        [ngClass]="{'error': registerForm.controls.name.touched&&registerForm.controls.name.invalid}"
+        placeholder="Nombre" formControlName="name">
+      <p class="spn form-validation"
+        [ngClass]="{'error':registerForm.controls.name.touched&&registerForm.controls.name.invalid}">
+        Requerido</p>
+    </div>
+
+    <div class="inputGroup">
+      <input type="text" class="input-validation" maxlength="30"
+        [ngClass]="{'error': registerForm.controls.last_name.touched&&registerForm.controls.last_name.invalid}"
+        placeholder="Apellido" formControlName="last_name">
+      <p class="spn form-validation"
+        [ngClass]="{'error':registerForm.controls.last_name.touched&&registerForm.controls.last_name.invalid}">
+        Requerido</p>
+    </div>
+    <div class="inputGroup">
+      <select class="input-validation"
+        [ngClass]="{'error': registerForm.controls.country.touched&&registerForm.controls.country.invalid}"
+        [ngClass]="{'placeholder':registerForm.controls.country.pristine}" (change)="changeCountry($event)"
+        formControlName="country">
+        <option value="">Pais</option>
+        <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+      </select>
+      <p class="spn form-validation"
+        [ngClass]="{'error':registerForm.controls.country.touched&&registerForm.controls.country.invalid}">
+        Requerido</p>
+    </div>
+    <div class="inputGroup">
+      <select class="input-validation"
+        [ngClass]="{'error': registerForm.controls.province.touched&&registerForm.controls.province.invalid}"
+        [ngClass]="{'placeholder':registerForm.controls.province.pristine}" (change)="changeProvince($event)"
+        formControlName="province">
+        <option value="">Provincia</option>
+        <option *ngFor="let province of provinces" [value]="province.name">{{province.name}}</option>
+      </select>
+      <p class="spn form-validation"
+        [ngClass]="{'error':registerForm.controls.province.touched&&registerForm.controls.province.invalid}">
+        Requerido</p>
+    </div>
+    <div class="inputGroup">
+      <input type="text" class="input-validation" maxlength="10"
+        [ngClass]="{'error': registerForm.controls.phone.touched&&registerForm.controls.phone.invalid}"
+        placeholder="Teléfono" formControlName="phone">
+      <p class="spn form-validation" *ngIf="registerForm.controls.phone.errors?.required"
+        [ngClass]="{'error':registerForm.controls.phone.touched&&registerForm.controls.phone.invalid}">
+        Requerido</p>
+        <p class="spn form-validation"*ngIf="registerForm.controls.phone.errors?.pattern"
+        [ngClass]="{'error':registerForm.controls.phone.touched&&registerForm.controls.phone.invalid}">
+        No es un formato Válido</p>
+    </div>
+    <div class="inputGroup">
+      <input type="text" class="input-validation"
+        [ngClass]="{'error': registerForm.controls.mail.touched&&registerForm.controls.mail.invalid}"
+        placeholder="Email" formControlName="mail">
+      <p class="spn form-validation" *ngIf="registerForm.controls.mail.errors?.required"
+        [ngClass]="{'error':this.registerForm.controls.mail.touched&&registerForm.controls.mail.invalid}">
+        Email Requerido</p>
+        <p class="spn form-validation" *ngIf="registerForm.controls.mail.errors?.email"
+        [ngClass]="{'error':this.registerForm.controls.mail.touched&&registerForm.controls.mail.invalid}">
+        No es un formato de mail válido</p>
+    </div>
+
+    <div class="inputGroup">
+      <input type="password" class="input-validation"
+        [ngClass]="{'error': registerForm.controls.password.touched&&registerForm.controls.password.invalid}"
+        placeholder="Password" formControlName="password">
+      <p class="spn form-validation"  *ngIf="registerForm.controls.password.errors?.required"
+        [ngClass]="{'error':registerForm.controls.password.touched&&registerForm.controls.password.invalid}">
+       Contraseña Requerida</p>
+       <p class="spn form-validation"  *ngIf="registerForm.controls.password.errors?.minlength"
+        [ngClass]="{'error':registerForm.controls.password.touched&&registerForm.controls.password.invalid}">
+       Mínimo {{registerForm.controls.password.errors.minlength.requiredLength}} caracteres Alfanuméricos y solo exiten {{registerForm.controls.password.errors.minlength.actualLength}}</p>
+    </div>
+
+    <div class="inputGroup">
+      <input type="password" class="input-validation" maxlength="30"
+        [ngClass]="{'error': registerForm.controls.confirm_password.touched&&registerForm.controls.confirm_password.invalid}"
+        placeholder="confirm_password" formControlName="confirm_password">
+      <p class="spn form-validation"
+        [ngClass]="{'error':registerForm.controls.confirm_password.touched&&registerForm.controls.confirm_password.invalid}">
+      Contraseña no coincide</p>
+    </div>
+
+    <div  class="checkGroup">
+      <a href="">Acepto terminos y condiciones</a>
+      <input type="checkbox" formControlName="acceptTerms">
+      <p class="spn form-validation" *ngIf="registerForm.controls.acceptTerms.errors?.required"
+        [ngClass]="{'error':registerForm.controls.acceptTerms.touched&&registerForm.controls.acceptTerms.invalid}">
+        Se requiere aceptar terminos.
+       </p>
+    </div>
+    <div>
+      <button type="button" class="btn btn-wolox-info" [disabled] = 'registerForm.invalid' (click)="register()"
+    >Registrarme</button>
+    </div>
+
+  </form>
+
+  <div class="form-footer">
+    <span>¿Ya tienes usuario?</span>
+    <button (click)="login()" class="btn">Login</button>
+  </div>
+
+</article>

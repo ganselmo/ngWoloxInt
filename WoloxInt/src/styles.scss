@@ -4,6 +4,7 @@ $color-primary: #2aa7df;
 $color-secondary:#97cf00;
 $color-tertiary:#1b263c;
 $color-light: #00a9e5;
+$color-invalid:red;
 * {
   margin: 0;
   padding: 0;
@@ -162,6 +163,11 @@ input[type="reset"] {
   color: $color-tertiary;
 }
 
+.color-tertiary
+{
+  background-color: $color-tertiary;
+}
+
 .separator{
   height: 0px;
 
@@ -169,7 +175,120 @@ input[type="reset"] {
 
   box-shadow: 0 0 10px 1px $color-primary;
 }
+input {
+  width: 20vw;
+  height: 3vh;
+  font-size: 1.2em;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  appearance: textfield;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  margin: 0em;
+  // padding: 1vh 1vw;
+
+  border: 0px;
+  border-bottom: 1px solid $color-tertiary;
+  border-image: initial;
+  transition: border-bottom 0.5s;
+}
+
+select {
+  width: 20vw;
+  height: 3vh;
+  font-size: 1.2em;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  appearance: textfield;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  margin: 0em;
+
+  border: 0px;
+  border-bottom: 1px solid $color-tertiary;
+  border-image: initial;
+  transition: border-bottom 0.5s;
+
+    // A reset of styles, including removing the default dropdown arrow
+    appearance: none;
+    // Additional resets for further consistency
+    background-color: transparent;
+    padding: 0 1em 0 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
+}
+select::-ms-expand {
+  display: none;
+}
+
+p.form-validation{
+
+  font-size: 0.8em;
+  color: $color-tertiary;
+  opacity: 0;
+}
 
 
+.error{
+  color: $color-invalid;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+p.form-validation.error{
+  color: $color-invalid;
+  opacity: 1;
+  transition: 0.5s;
+}
+.input-validation.error{
+  transition: 0.5s;
+  border-bottom: 1px solid $color-invalid;
+
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
 
 
+button:disabled,
+button[disabled]:hover{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,119 @@
+article {
+  background-color: white;
+  width: 50vw;
+
+  display: grid;
+  grid-template-areas: "header header header"
+    "main main main"
+    "footer footer footer";
+  grid-template-rows: 100px 1fr 100px;
+  grid-template-columns: 50px 1fr 100px;
+  border-radius: 20px;
+  box-shadow: 5px 10px 15px 5px black;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+
+  .form-header {
+    grid-area: header;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-rows: 40px;
+    align-self: center;
+    display: grid;
+
+    h1 {
+      font-size: 3em;
+      grid-column-start: 2;
+      align-self: center;
+      justify-self: center;
+    }
+
+    .close {
+      width: 30px;
+      padding: 6px;
+      border-radius: 25px;
+      align-self: center;
+      justify-self: center;
+      font-weight: bold;
+      color: white;
+    }
+  }
+
+  form {
+    grid-area: main;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 2vh 0;
+
+    .checkGroup {
+      height: 4vh;
+      width: 30vw;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      grid-template-columns: 1fr 10px;
+      gap: 10px 0;
+      grid-template-rows: 1fr;
+    }
+
+    .inputGroup {
+      height: 4vh;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      grid-template-rows: 1fr 10px;
+      gap: 10px 0;
+      grid-template-columns: 1fr;
+
+      input {
+        font-family: "Montserrat semi bold";
+        -webkit-appearance: none;
+        outline: none;
+
+      }
+
+      select {
+        font-family: "Montserrat semi bold";
+        -webkit-appearance: none;
+        outline: none;
+        text-align: center;
+        text-align-last: center;
+        padding-right: 0;
+        font-size: 1.2em;
+      }
+
+      option {
+        text-align: center;
+      }
+
+
+      .placeholder {
+        color: grey;
+        text-align: center;
+      }
+    }
+
+
+    button {
+      width: 22vw;
+
+      padding: 1vh 1vw;
+    }
+
+  }
+
+  .form-footer {
+    grid-area: footer;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 2vh 0;
+
+    button {
+      width: 20vw;
+      height: 3vh;
+      padding: 1vh 1vw;
+    }
+  }
+}

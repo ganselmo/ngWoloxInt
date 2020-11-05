@@ -1,17 +1,34 @@
 <article>
-  <h1>
-    Login
-  </h1>
-  <form action="">
-    <div>
-      <input type="text" placeholder="Usuario o Email">
+  <div class="form-header">
+    <h1>
+      Login
+    </h1>
+    <button (click)="close()" class="close color-tertiary">
+      X
+    </button>
+  </div>
+
+  <form [formGroup]="profileForm">
+    <div class="inputGroup">
+      <input type="text" class="input-validation"
+      [ngClass]="{'error': this.profileForm.controls.firstName.touched&&this.profileForm.controls.firstName.invalid}" placeholder="Email" formControlName="firstName">
+      <p class="spn form-validation"  [ngClass]="{'error':this.profileForm.controls.firstName.touched&&this.profileForm.controls.firstName.invalid}">requerido</p>
+    </div>
+    <div class="inputGroup">
+      <input type="text" class="input-validation"
+      [ngClass]="{'error': this.profileForm.controls.lastName.touched&&this.profileForm.controls.lastName.invalid}" placeholder="Contraseña" formControlName="lastName">
+      <p class="spn form-validation"[ngClass]="{'error':this.profileForm.controls.lastName.touched&&this.profileForm.controls.lastName.invalid}">requerido</p>
     </div>
     <div>
-      <input type="text" placeholder="Contraseña">
+      <button type="button"class="btn btn-wolox-info" (click)="login()">Ingresar</button>
     </div>
-    <div>
-      <span>¿No tienes usuario?</span>
-      <button>Registrarme</button>
-    </div>
+
+
   </form>
+
+  <div class="form-footer">
+    <span>¿No tienes usuario?</span>
+    <button (click)="register()"class="btn">Registrarme</button>
+  </div>
+
 </article>

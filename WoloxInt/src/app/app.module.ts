@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthenticationModule } from './modules/authentication/authentication.module';
 
+
 @NgModule({
   declarations: [
     AppComponent

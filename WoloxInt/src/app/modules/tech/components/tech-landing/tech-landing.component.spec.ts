@@ -1,21 +1,28 @@
-import { HttpClient, HttpHandler } from '@angular/common/http';
+
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AppModule } from 'src/app/app.module';
 import { TechService } from '../../services/tech.service';
+import { TechModule } from '../../tech.module';
 
 import { TechLandingComponent } from './tech-landing.component';
 
 describe('TechLandingComponent', () => {
   let component: TechLandingComponent;
-  let service: TechService;
-  let http: HttpClient;
-  let httpc: HttpHandler;
+  let fixture: ComponentFixture<TechLandingComponent>;
 
   beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [TechLandingComponent],
+      imports: [AppModule, TechModule
+      ]
+    })
+      .compileComponents();
+  });
 
-    http = await new HttpClient(httpc)
-    service = await new TechService(http);
-    component = await new TechLandingComponent(service);
-
-
+  beforeEach(() => {
+    fixture = TestBed.createComponent(TechLandingComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
 
@@ -33,17 +40,27 @@ describe('TechLandingComponent', () => {
     })
   })
 
-  it('Deben cambiar los filtros', async () => {
+  it('Deben cambiar los filtros', async (done: DoneFn) => {
 
-    component.techFilter.value ='100';
+    component.techFilter.value = 'node';
     expect(component.techFilter).toEqual({
       field: 'tech',
-      value: '100'
+      value: 'node'
     })
+    done()
 
-    expect(component.typeFilter).toEqual({
-      field: 'type',
-      value: ''
-    })
+
   })
+
+
+
+  // it('#getObservableValue should return value from observable',
+  //   (done: DoneFn) => {
+  //     fixture.autoDetectChanges()
+  //     component.techs.subscribe(value => {
+  //       expect(value.length).toBe(0);
+
+  //     });
+  //     done()
+  //   });
 });

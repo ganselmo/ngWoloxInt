@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TechLandingComponent } from './tech-landing/tech-landing.component';
+import { TechLandingComponent } from './components/tech-landing/tech-landing.component';
 
 
 const routes: Routes = [

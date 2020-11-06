@@ -176,6 +176,8 @@ input[type="reset"] {
   box-shadow: 0 0 10px 1px $color-primary;
 }
 input {
+  -webkit-appearance: none;
+  outline: none;
   width: 20vw;
   height: 3vh;
   font-size: 1.2em;

@@ -8,15 +8,16 @@ import { AuthenticationService } from '../authentication/authentication.service'
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private authService: AuthenticationService, private router: Router){}
+  constructor(private authService: AuthenticationService, private router: Router) { }
   canActivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     console.log(this.authService.isAuthenticated())
-    if(!this.authService.isAuthenticated())
-    {
+    if (!this.authService.isAuthenticated()) {
       this.router.navigate(['/landing']);
+      return false;
     }
-
     return true;
+
+
   }
 
 }

@@ -25,9 +25,13 @@ header {
   .buttons {
     display: flex;
     flex: row nowrap;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     width: 50%;
+    .favorites{
+      font-weight: 700;
+      margin: 0 1vw;
+    }
 
 
   }

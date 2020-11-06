@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RegisterComponent } from 'src/app/modules/authentication/register/register.component';
+import { TechService } from 'src/app/modules/tech/services/tech.service';
 import { AuthenticationService } from '../authentication/authentication.service';
 import { ModalService } from '../services/modal.service';
 
@@ -10,18 +12,28 @@ import { ModalService } from '../services/modal.service';
 })
 
 export class HeaderComponent implements OnInit {
-  constructor(private modalService: ModalService,private authService:AuthenticationService) { }
+  constructor(private modalService: ModalService,
+    private authService: AuthenticationService,
+    private router: Router,
+    private techService:TechService) { }
   ngOnInit(): void {
   }
-  login() {
+  login(): void {
     this.modalService.openModal(RegisterComponent)
   }
   scroll(id: string) {
-    let el = document.querySelector('#'+id);
+    let el = document.querySelector('#' + id);
     el.scrollIntoView();
   }
-  logged()
-  {
+  islogged() :boolean {
     return this.authService.isAuthenticated()
+  }
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['landing']);
+  }
+  getFavorites()
+  {
+    return this.techService.getLikedTechsCount()
   }
 }

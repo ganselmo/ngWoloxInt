@@ -8,22 +8,23 @@ import { TokenModel } from './models/token.model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthenticationService {
 
 
   constructor(private http: HttpClient) {
   }
 
-  getToken() {
+  getToken() :string{
     return localStorage.getItem('AppToken');
   }
   setToken(data: TokenModel): void {
     localStorage.setItem('AppToken', data.token);
   }
-  getStorageUser() {
+  getStorageUser() :string{
     return localStorage.getItem('use_name');
   }
-  setStorageUser(user: UserModel) {
+  setStorageUser(user: UserModel) :void {
     localStorage.setItem('user_name', user.name);
     localStorage.setItem('user_last_name', user.last_name);
     localStorage.setItem('country', user.country);
@@ -31,7 +32,7 @@ export class AuthenticationService {
     localStorage.setItem('mail', user.mail);
   }
 
-  clearLocalStorage() {
+  clearLocalStorage() :void{
     localStorage.clear()
   }
 
@@ -44,5 +45,9 @@ export class AuthenticationService {
 
   isAuthenticated(): boolean {
     return this.getToken() != undefined
+  }
+  logout() :void
+  {
+    this.clearLocalStorage()
   }
 }

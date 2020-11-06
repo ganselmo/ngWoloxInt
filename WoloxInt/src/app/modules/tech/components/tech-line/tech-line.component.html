@@ -1,0 +1,10 @@
+<li>
+  <span>{{tech.tech}}</span>
+  <span>{{tech.year}}</span>
+  <span>{{tech.author}}</span>
+  <span>{{tech.license}}</span>
+  <span>{{tech.type}}</span>
+  <img class='logo' [src]="tech.logo" alt="">
+  <img class='like' (click)="unlike()" *ngIf="tech.liked" src="../../../../../assets/starComplete.svg">
+  <img class='like' (click)="like()"  *ngIf="!tech.liked" src="../../../../../assets/starEmpty.svg">
+</li>

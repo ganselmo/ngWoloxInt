@@ -1,0 +1,36 @@
+<app-header></app-header>
+<section>
+
+  <h1>Lista de tecnologías</h1>
+  <div class="header">
+    <h4>Filtros</h4>
+    <div class="filtros">
+
+      <input type="text" [(ngModel)]='techFilter.value' placeholder="Nombre" (ngModelChange)="filterData()">
+      <input type="text" [(ngModel)]='typeFilter.value' placeholder="Tipo" (ngModelChange)="filterData()">
+    </div>
+
+  </div>
+  <div class="data">
+    <li>
+      <span class="orden">
+        Nombre
+        <div class="ordenable">
+          <button type="text" (click)='sortAsc("tech")'>↑</button>
+          <button type="text" (click)='sortDesc("tech")'>↓</button>
+        </div>
+      </span>
+      <span>Año de Creacion</span>
+      <span>Autor</span>
+      <span>Licencia</span>
+      <span>Tipo</span>
+      <span>Logo</span>
+      <span>Favorito</span>
+    </li>
+    <app-tech-line *ngFor="let tech of techs.value" [data]="tech"></app-tech-line>
+    <!-- <button (click)="this.getData()">test</button> -->
+  </div>
+  <footer>
+    Mostrando {{techs.value.length}} tecnologías
+  </footer>
+</section>

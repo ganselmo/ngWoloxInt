@@ -6,7 +6,7 @@
     <button  (click)="scroll('inicio')" *ngIf="!islogged()" class="btn btn-simple">Inicio</button>
     <button (click)="scroll('beneficios')" *ngIf="!islogged()" class="btn btn-simple">Beneficios</button>
     <button nef class="btn btn-wolox-info" *ngIf="!islogged()" (click)="login()">Login</button>
-    <div class="favorites" *ngIf="islogged()">{{getFavorites().value}} Tecnologías favoritas</div>
+    <div class="favorites" *ngIf="islogged()&&getFavorites().value>0">{{getFavorites().value}} Tecnologías favoritas</div>
     <button nef class="btn btn-wolox-info" *ngIf="islogged()" (click)="logout()">Log out</button>
   </div>
 </header>

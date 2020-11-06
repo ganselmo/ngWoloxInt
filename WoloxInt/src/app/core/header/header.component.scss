@@ -38,7 +38,9 @@ header {
 
 }
 
-@media (max-width: 300px) {
+
+
+@media (max-width: 600px) {
   header {
     .logo {
       display: flex;
@@ -51,25 +53,10 @@ header {
 
     }
     .buttons {
-      width: 80%
-    }
-
-  }
-}
-
-@media (min-width: 300px) and (max-width: 600px) {
-  header {
-    .logo {
-      display: flex;
-      align-self: center;
-
-      img {
-        width: 100px;
+      .btn.btn-simple
+      {
+        visibility: hidden;
       }
-
-
-    }
-    .buttons {
       width: 60%
     }
 

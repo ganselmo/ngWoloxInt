@@ -36,17 +36,14 @@ section {
       }
     }
     .twitterRef {
-
       a {
-
+        height: 2vh;
+        font-size: 1em;
         text-decoration: none; /* no underline */
       }
     }
-
   }
-  .ideas
-  {
-
+  .ideas {
     position: relative;
     height: 100%;
     z-index: 2;
@@ -55,7 +52,7 @@ section {
     align-items: center;
     justify-content: center;
     width: 45vw;
-    h1{
+    h1 {
       font-family: "Montserrat Light";
       text-align: center;
       width: 35vw;
@@ -71,7 +68,71 @@ section {
     opacity: 0.95;
     filter: sepia(100%) hue-rotate(190deg) saturate(100%);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     height: 45vh;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+  section {
+    .twitter-block-background
+    {
+      background: url(/assets/img_woloxer@2x.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .twitter-block {
+      .title {
+        font-size: 2.1em;
+      }
+      .twitter-link {
+        img {
+          width: 30px;
+        }
+      }
+    }
+    .ideas {
+
+      h1 {
+
+        text-align: center;
+        width: 40vw;
+        font-size: 2.0em;
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  section {
+    flex-direction: column;
+    height: 100vh;
+    .twitter-block-background
+    {
+      background: url(/assets/img_woloxer.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100vw;
+    }
+    .twitter-block {
+      width: 100vw;
+      .title {
+        font-size: 2.1em;
+      }
+      .twitter-link {
+        img {
+          width: 30px;
+        }
+      }
+    }
+    .ideas {
+      width: 100vw;
+      h1 {
+        font-family: "Montserrat Light";
+        text-align: center;
+        width: 90vw;
+        font-size: 2.0em;
+        height: auto;
+      }
+    }
   }
 }

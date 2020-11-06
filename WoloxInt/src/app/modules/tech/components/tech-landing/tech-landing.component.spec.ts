@@ -1,5 +1,4 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TechService } from '../../services/tech.service';
 
 import { TechLandingComponent } from './tech-landing.component';
@@ -7,8 +6,8 @@ import { TechLandingComponent } from './tech-landing.component';
 describe('TechLandingComponent', () => {
   let component: TechLandingComponent;
   let service: TechService;
-  let http :HttpClient;
-  let httpc :HttpHandler;
+  let http: HttpClient;
+  let httpc: HttpHandler;
 
   beforeEach(async () => {
 
@@ -20,13 +19,31 @@ describe('TechLandingComponent', () => {
   });
 
 
-  it('Debe traer Datos', async () => {
+  it('Debe crear los filtros', async () => {
 
-   component.techs.subscribe(
-     (data)=>{
-      expect(data.length).toEqual(9)
-     }
-   )
+
+    expect(component.techFilter).toEqual({
+      field: 'tech',
+      value: ''
+    })
+
+    expect(component.typeFilter).toEqual({
+      field: 'type',
+      value: ''
+    })
   })
 
+  it('Deben cambiar los filtros', async () => {
+
+    component.techFilter.value ='100';
+    expect(component.techFilter).toEqual({
+      field: 'tech',
+      value: '100'
+    })
+
+    expect(component.typeFilter).toEqual({
+      field: 'type',
+      value: ''
+    })
+  })
 });

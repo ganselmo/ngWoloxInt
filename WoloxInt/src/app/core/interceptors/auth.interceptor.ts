@@ -13,7 +13,10 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    console.log(request)
-    return next.handle(request);
+
+    const reqwWHaders = request.clone({
+      headers: request.headers.set('Content-Type', 'application/json')
+    })
+    return next.handle(reqwWHaders);
   }
 }

@@ -45,6 +45,7 @@ article {
     align-items: center;
     justify-items: center;
     gap: 2vh 0;
+    min-height: 10vh;
     .inputGroup
     {
       display: grid;
@@ -52,7 +53,7 @@ article {
       justify-items: center;
       grid-template-rows: 1fr 10px;
       gap: 10px 0;
-      grid-template-columns: 1fr ;
+      grid-template-columns: 100px ;
       input {
         font-family: "Montserrat semi bold";
         -webkit-appearance: none;

@@ -28,7 +28,7 @@ export class TechLandingComponent implements OnInit,OnDestroy {
   }
   ngOnDestroy()
   {
-    this.techs.unsubscribe()
+
   }
 
   filterData() :void{

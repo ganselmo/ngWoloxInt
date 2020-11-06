@@ -7,6 +7,14 @@ footer {
   background-color: transparent;
   z-index: 3;
   img {
+  }
+}
 
+@media (min-width: 601px) and (max-width: 1000px) {
+  :host{
+    margin: 0;
+  }
+  footer {
+    margin: 0;
   }
 }

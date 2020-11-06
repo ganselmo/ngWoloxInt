@@ -76,7 +76,7 @@
     <div class="inputGroup">
       <input type="password" class="input-validation"
         [ngClass]="{'error': registerForm.controls.password.touched&&registerForm.controls.password.invalid}"
-        placeholder="Password" formControlName="password">
+        placeholder="Contraseña" formControlName="password">
       <p class="spn form-validation"  *ngIf="registerForm.controls.password.errors?.required"
         [ngClass]="{'error':registerForm.controls.password.touched&&registerForm.controls.password.invalid}">
        Contraseña Requerida</p>
@@ -88,7 +88,7 @@
     <div class="inputGroup">
       <input type="password" class="input-validation" maxlength="30"
         [ngClass]="{'error': registerForm.controls.confirm_password.touched&&registerForm.controls.confirm_password.invalid}"
-        placeholder="confirm_password" formControlName="confirm_password">
+        placeholder="Confirmar Contraseña" formControlName="confirm_password">
       <p class="spn form-validation"
         [ngClass]="{'error':registerForm.controls.confirm_password.touched&&registerForm.controls.confirm_password.invalid}">
       Contraseña no coincide</p>

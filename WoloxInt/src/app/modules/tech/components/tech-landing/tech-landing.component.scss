@@ -1,4 +1,12 @@
+app-header{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 2vh 7vw;
+}
+
 section {
+
   margin: 0 100px;
 
   .filtros{

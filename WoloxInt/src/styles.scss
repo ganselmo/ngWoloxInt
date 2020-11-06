@@ -10,7 +10,9 @@ $color-invalid:red;
   padding: 0;
   font-family: Montserrat;
 }
-
+html{
+  overflow-x: hidden;
+}
 @font-face {
   font-family: "Fira_Sans";
   src: url("./assets/Fonts/Fira_Sans/FiraSans-Regular.ttf");

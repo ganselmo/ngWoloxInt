@@ -41,3 +41,63 @@ section {
     // justify-self: flex-end;
   }
 }
+
+@media (min-width: 601px) and (max-width: 1000px) {
+  section {
+    background: url(/assets/Backgrounds/Bg_Header@2x.png);
+    height: 220px;
+    margin: 40px 0;
+    .texts{
+      margin : 0 30px;
+      text-align: center;
+      h1{
+        font-size: 2em;
+      }
+      h2{
+        font-size: 1em;
+      }
+      .woloxRef {
+        a {
+          height: 2vh;
+          font-size: 1em;
+
+        }
+      }
+
+    }
+    app-footer{
+      margin: 0;
+    }
+  }
+}
+
+
+@media (max-width: 600px) {
+  section {
+    background: url(/assets/Backgrounds/Bg_Header@2x.png);
+    height: 300px;
+    margin: 40px 0;
+    .texts{
+      margin : 0 30px;
+      text-align: center;
+      h1{
+        font-size: 2em;
+      }
+      h2{
+        font-size: 1em;
+      }
+      .woloxRef {
+        a {
+          height: 2vh;
+          font-size: 1em;
+
+        }
+      }
+
+    }
+    app-footer{
+      margin: 0;
+    }
+  }
+}
+

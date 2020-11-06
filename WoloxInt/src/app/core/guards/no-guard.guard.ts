@@ -6,13 +6,14 @@ import { AuthenticationService } from '../authentication/authentication.service'
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class NoGuard implements CanActivate {
+
 
   constructor(private authService: AuthenticationService, private router: Router) { }
   canActivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    if (!this.authService.isAuthenticated()) {
-      this.router.navigate(['/landing']);
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/technologies']);
       return false;
     }
     return true;

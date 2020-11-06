@@ -34,7 +34,7 @@ export class TechLandingComponent implements OnInit,OnDestroy {
   filterData() :void{
 
     this.techService.filter([this.techFilter,this.typeFilter])
-    console.log(this.techs.value)
+
   }
   sortAsc(field:string) :void
   {

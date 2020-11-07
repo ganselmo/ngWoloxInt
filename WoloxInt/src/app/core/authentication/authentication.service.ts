@@ -33,7 +33,7 @@ export class AuthenticationService {
   }
 
   clearLocalStorage() :void{
-    localStorage.clear()
+    localStorage.clear();
   }
 
   login(loginForm: LoginRequestModel): Promise<Object> {
@@ -44,10 +44,10 @@ export class AuthenticationService {
   }
 
   isAuthenticated(): boolean {
-    return this.getToken() != undefined
+    return this.getToken() != undefined;
   }
   logout() :void
   {
-    this.clearLocalStorage()
+    this.clearLocalStorage();
   }
 }

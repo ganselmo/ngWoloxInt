@@ -46,14 +46,14 @@ export class RegisterComponent implements OnInit {
     this.countries = this.locationService.getCountries()
   }
 
-  close() {
+  close():void {
     this.modalService.closeModal();
   }
-  login() {
+  login():void  {
     this.modalService.openModal(LoginComponent)
   }
 
-  register() {
+  register():void  {
 
     const formData = {
       name:this.registerForm.value.name,
@@ -81,7 +81,7 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  changeCountry(e) {
+  changeCountry(e):void  {
 
     let country = this.countries.find(data => data.name === e.target.value);
     this.provinces = country.provinces;
@@ -91,7 +91,7 @@ export class RegisterComponent implements OnInit {
       onlySelf: true
     })
   }
-  changeProvince(e) {
+  changeProvince(e):void  {
     this.registerForm.controls.province.setValue(e.target.value, {
       onlySelf: true
     })

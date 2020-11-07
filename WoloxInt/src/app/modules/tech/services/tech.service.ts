@@ -9,8 +9,11 @@ import { TechModel } from '../models/tech.model';
 })
 export class TechService {
 
-  baseTechs: BehaviorSubject<Array<TechModel>> = new BehaviorSubject<Array<TechModel>>([]);;
-  filteredTechs: BehaviorSubject<Array<TechModel>> = new BehaviorSubject<Array<TechModel>>([]);;
+  private baseTechs: BehaviorSubject<Array<TechModel>> = new BehaviorSubject<Array<TechModel>>([]);;
+  private filteredTechs: BehaviorSubject<Array<TechModel>> = new BehaviorSubject<Array<TechModel>>([]);
+  private likedTechs: Array<string>;
+  private likedTechsCount:BehaviorSubject<number> = new BehaviorSubject<number>(0)
+
   constructor(private http: HttpClient) {
     this.likedTechs = this.getLiked();
     this.initTechs().then(
@@ -27,6 +30,11 @@ export class TechService {
     )
   }
 
+
+  destroy():void{
+    this.likedTechs = [];
+    localStorage.setItem('likedTechs', '[]');
+  }
   initTechs(): Promise<Object> {
     return this.http.get('http://private-8e8921-woloxfrontendinverview.apiary-mock.com/techs').toPromise();
   }
@@ -45,7 +53,7 @@ export class TechService {
     this.filteredTechs.next(result)
   }
 
-  sortAsc(field: string) {
+  sortAsc(field: string):void  {
     let result = this.filteredTechs.value;
     result.sort(function (a: TechModel, b: TechModel): number {
       if (a[field].toLowerCase() > b[field].toLowerCase()) {
@@ -58,8 +66,6 @@ export class TechService {
     });
     this.filteredTechs.next(result)
   }
-  likedTechs: Array<string>;
-  likedTechsCount:BehaviorSubject<number> = new BehaviorSubject<number>(0)
 
   getLiked(): Array<string> {
 
@@ -72,30 +78,28 @@ export class TechService {
     else{
       likedArray = []
     }
-
-
     return likedArray
   }
 
 
-  saveLike(tech: string) {
+  saveLike(tech: string):void  {
     this.likedTechs.push(tech)
     this.saveLiked()
   }
-  deleteLike(tech: string) {
+  deleteLike(tech: string):void  {
     var index =   this.likedTechs.indexOf(tech);
     if (index !== -1) {
       this.likedTechs.splice(index, 1);
     }
 
-    this.saveLiked()
+    this.saveLiked();
   }
 
   getLikedTechsCount() :BehaviorSubject<number>
   {
     return this.likedTechsCount;
   }
-  private saveLiked() {
+  private saveLiked():void  {
     this.likedTechsCount.next(this.likedTechs.length)
     localStorage.setItem('likedTechs', JSON.stringify(this.likedTechs));
   }

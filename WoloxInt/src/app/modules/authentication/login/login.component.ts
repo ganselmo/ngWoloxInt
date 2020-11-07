@@ -22,14 +22,14 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  close() {
+  close():void {
     this.modalService.closeModal();
   }
-  register() {
+  register():void {
     this.modalService.openModal(RegisterComponent)
   }
 
-  login() {
+  login():void {
     if(this.profileForm.valid)
     {
       this.authService.login(this.profileForm.value).then(

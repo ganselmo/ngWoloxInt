@@ -20,7 +20,7 @@ export class ModalOutletComponent implements OnInit {
       this.component = data;
     })
   }
-  wheelBlock(e)
+  wheelBlock(e):void
   {
     e.preventDefault()
   }

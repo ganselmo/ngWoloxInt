@@ -26,15 +26,14 @@ export class TechLandingComponent implements OnInit,OnDestroy {
   ngOnInit(): void {
     this.techs = this.techService.getTechs()
   }
+
   ngOnDestroy()
   {
-
+    this.techService.destroy();
   }
 
   filterData() :void{
-
     this.techService.filter([this.techFilter,this.typeFilter])
-
   }
   sortAsc(field:string) :void
   {
@@ -46,9 +45,5 @@ export class TechLandingComponent implements OnInit,OnDestroy {
     this.techService.sortDesc(field)
   }
 
-  testLiked()
-  {
-    console.log(this.techService.getLiked())
 
-  }
 }

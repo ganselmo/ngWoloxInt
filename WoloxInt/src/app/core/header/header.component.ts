@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { RegisterComponent } from 'src/app/modules/authentication/register/register.component';
 import { TechService } from 'src/app/modules/tech/services/tech.service';
 import { AuthenticationService } from '../authentication/authentication.service';
@@ -32,7 +33,7 @@ export class HeaderComponent implements OnInit {
     this.authService.logout();
     this.router.navigate(['landing']);
   }
-  getFavorites()
+  getFavorites():BehaviorSubject<number>
   {
     return this.techService.getLikedTechsCount()
   }

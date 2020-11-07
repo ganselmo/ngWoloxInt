@@ -13,7 +13,7 @@ export class LocationService {
     this.countries = new BehaviorSubject<Array<Country>>([])
   }
 
-  initCountries() {
+  initCountries() :void {
     const countries: Array<Country> =
       [
         {
@@ -94,7 +94,7 @@ export class LocationService {
       ]
     this.countries.next(countries)
   }
-  getCountries()
+  getCountries():Array<Country>
   {
     return this.countries.value
   }

@@ -6,21 +6,19 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ModalService {
 
-  private modal:BehaviorSubject<any> =  new BehaviorSubject<any>(null);
+  private modal: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
   constructor() { }
 
-  openModal(component)
-  {
+  openModal(component): void {
 
     this.modal.next(component)
   }
-  getModal(){
+  getModal(): BehaviorSubject<any> {
     return this.modal
   }
 
-  closeModal()
-  {
+  closeModal(): void {
     this.modal.next(null)
   }
 

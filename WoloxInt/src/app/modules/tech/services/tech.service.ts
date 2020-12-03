@@ -36,7 +36,7 @@ export class TechService {
     localStorage.setItem('likedTechs', '[]');
   }
   initTechs(): Promise<Object> {
-    return this.http.get('http://private-8e8921-woloxfrontendinverview.apiary-mock.com/techs').toPromise();
+    return this.http.get('https://private-8e8921-woloxfrontendinverview.apiary-mock.com/techs').toPromise();
   }
 
   getTechs(): BehaviorSubject<Array<TechModel>> {

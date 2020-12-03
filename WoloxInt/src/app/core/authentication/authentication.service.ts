@@ -37,10 +37,10 @@ export class AuthenticationService {
   }
 
   login(loginForm: LoginRequestModel): Promise<Object> {
-    return this.http.post('http://private-8e8921-woloxfrontendinverview.apiary-mock.com/login', { loginForm }).toPromise();
+    return this.http.post('https://private-8e8921-woloxfrontendinverview.apiary-mock.com/login', { loginForm }).toPromise();
   }
   register(registerForm: RegisterRequestModel): Promise<Object> {
-    return this.http.post('http://private-8e8921-woloxfrontendinverview.apiary-mock.com/signup', { registerForm }).toPromise();
+    return this.http.post('https://private-8e8921-woloxfrontendinverview.apiary-mock.com/signup', { registerForm }).toPromise();
   }
 
   isAuthenticated(): boolean {
